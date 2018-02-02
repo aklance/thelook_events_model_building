@@ -8,7 +8,7 @@ include: "*.dashboard"
 
 datagroup: thelook_module3_5ak_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
-  max_cache_age: "1 hour"
+  max_cache_age: "4 hours"
 }
 
 persist_with: thelook_module3_5ak_default_datagroup
@@ -24,6 +24,7 @@ explore: events {
     type: left_outer
     sql_on: ${events.user_id} = ${users.id} ;;
     relationship: many_to_one
+    view_label: "Order Activities"
   }
 }
 
@@ -74,5 +75,3 @@ explore: products {
     relationship: many_to_one
   }
 }
-
-explore: users {}

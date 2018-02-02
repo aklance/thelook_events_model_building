@@ -95,6 +95,11 @@ view: order_items {
     drill_fields: [detail*]
   }
 
+  dimension: is_order_paid {
+    type: yesno
+    sql: ${status} = 'paid' ;;
+  }
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
